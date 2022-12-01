@@ -31,16 +31,10 @@ contract parent{
 
                 return password;
             }
-
-
-
-
 }
 
 // Inheritance
 
 contract child is parent{
-
-    
 
 }
