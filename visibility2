@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity 0.8.7;
+
+contract visibility{
+
+    // Visibility
+    // Public
+    // Private
+    // Internal
+    // External
+
+
+    // Variables
+    string private password = " Vsfgjhjvhbxcjhgvbxhcvbhk ";
+
+
+    // Modifiers
+    modifier onlyOwner(){   
+        require(msg.sender == 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2,"The account doesnt have access rights");// gate for allowing only valid users
+        _;// funcvtion logic    
+    }
+
+
+    function getName()
+            view
+            public
+            onlyOwner
+            returns(string memory){
+
+                return password;
+            }
+
+
+
+
+}
