@@ -1,0 +1,38 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+// Visibility
+// public   ---> both parents and child can access
+// private  ---> only parent can access
+// internal ---> only child can access
+
+// External ---> only the outside people can access
+// Interfaces
+// abstracts
+
+
+
+
+contract erc20{
+
+     string public name;// i want this bit here to be dynamic
+     string public symbol;
+
+
+
+    constructor(string memory _name,string memory _symbol){
+
+        name = _name;
+        symbol = _symbol;
+
+    }
+  
+
+
+}
+
+
+contract child is erc20{
+
+    constructor(string memory _name,string memory _symbol) erc20(_name,_symbol){}
+}
