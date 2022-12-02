@@ -1,0 +1,39 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.8.0;
+
+contract HousePurchase {
+
+    uint public housePrice;
+
+    function setPrice(uint _price) internal {
+        housePrice = _price;
+    }
+
+}
+
+contract legalFees {
+
+    uint public legalFeePct;
+
+    function setLegalFees(uint _legalFeePercentage) internal {
+
+        legalFeePct = _legalFeePercentage;
+    }
+}
+
+contract calculate is HousePurchase, legalFees {
+
+    function setPropPrice(uint _price) public {
+        housePrice = _price;
+    }
+
+    function setLegalFeesAmt(uint _legalFeePercentage) public {
+
+        legalFeePct = _legalFeePercentage;
+    }
+
+    function getTotalCost() public view returns (uint) {
+       return housePrice * legalFeePct/100 + housePrice;
+    }
+} 
