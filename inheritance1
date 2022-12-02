@@ -1,0 +1,35 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.8.0;
+
+contract Adding {
+
+    uint public sum;
+
+    function setAdding(uint _a, uint _b) internal {
+        sum = _a * _b;
+    }
+
+}
+
+contract Production {
+
+    uint public multi;
+
+    function setMulti(uint _a, uint _b) internal {
+        multi = _a * _b;
+    }
+
+}
+
+contract Calculator is Adding, Production {
+
+    function setAddingdfunc(uint _a, uint _b) public {
+        sum = _a * _b; 
+        }
+
+    function setMultifunc(uint _a, uint _b) public {
+        multi = _a * _b;
+        }
+
+}
